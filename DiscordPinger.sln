@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Master", "Master\Master.csproj", "{BD41364B-D632-4B37-9007-9063AFE6969C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Middleware", "Middleware\Middleware.csproj", "{33938B84-35AE-4FFC-B93D-465B1D7E1809}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD41364B-D632-4B37-9007-9063AFE6969C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD41364B-D632-4B37-9007-9063AFE6969C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD41364B-D632-4B37-9007-9063AFE6969C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD41364B-D632-4B37-9007-9063AFE6969C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33938B84-35AE-4FFC-B93D-465B1D7E1809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33938B84-35AE-4FFC-B93D-465B1D7E1809}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33938B84-35AE-4FFC-B93D-465B1D7E1809}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33938B84-35AE-4FFC-B93D-465B1D7E1809}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
