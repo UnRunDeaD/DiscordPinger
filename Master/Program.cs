@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Threading.Tasks;
+using Master.DiscordBot;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -35,7 +36,7 @@ namespace Master {
             services.Configure<AppSettings>(configuration.GetSection("App"));
             
             // add services:
-            // services.AddTransient<IMyRespository, MyConcreteRepository>();
+            services.AddTransient<IBot, Bot>();
 
             // add app
             services.AddTransient<App>();
