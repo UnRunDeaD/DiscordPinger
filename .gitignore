@@ -1,5 +1,5 @@
 ##CUSTOM GITIGNORE ENTRIES
-**/settings.json
+**/appsettings.json
 .idea/
 
 ## Ignore Visual Studio temporary files, build results, and

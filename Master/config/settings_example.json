@@ -1,5 +1,0 @@
-﻿{
-  "token": "DISCORD_BOT_TOKEN",
-  "prefix": "+",
-  "mongoDbConString": "CONNECTION_STRING"
-} 

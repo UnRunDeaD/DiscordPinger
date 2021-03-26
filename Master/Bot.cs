@@ -7,20 +7,24 @@ using DSharpPlus.EventArgs;
 using DSharpPlus.Interactivity;
 using DSharpPlus.Interactivity.Extensions;
 using Microsoft.Extensions.Logging;
-using Middleware;
 
 namespace Master {
     public class Bot {
-        private DiscordClient Client { get; set; }
-        private CommandsNextExtension Commands { get; set; }
+        private DiscordClient _client { get; set; }
+        private CommandsNextExtension _commands { get; set; }
+        private readonly ILogger<Bot> _logger;
 
-        public async Task RunAsync(Configuration config) {
-            Client = CreateClient(config);
-            await Client.ConnectAsync();
+        public Bot(ILogger<Bot> logger) {
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        }
+
+        public async Task RunAsync(AppSettings settings) {
+            _client = CreateClient(settings);
+            await _client.ConnectAsync();
             await Task.Delay(-1);
         }
         
-        private DiscordClient CreateClient (Configuration config) {
+        private DiscordClient CreateClient (AppSettings config) {
             try {
                 var discordConfig = new DiscordConfiguration {
                     Token = config.Token,
