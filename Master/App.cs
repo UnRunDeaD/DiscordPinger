@@ -7,21 +7,18 @@ using Microsoft.Extensions.Options;
 namespace Master {
     public class App {
         private readonly ILogger<App> _applogger;
-        private readonly ILogger<Bot> _botLogger;
         private readonly AppSettings _appSettings;
+        private readonly IBot _bot;
 
-        public App(IOptions<AppSettings> appSettings, ILogger<App> appLogger, ILogger<Bot> botLogger) {
+        public App(IOptions<AppSettings> appSettings, ILogger<App> appLogger, IBot bot) {
             _applogger = appLogger ?? throw new ArgumentNullException(nameof(appLogger));
-            _botLogger = botLogger ?? throw new ArgumentNullException(nameof(botLogger));
             _appSettings = appSettings?.Value ?? throw new ArgumentNullException(nameof(appSettings));
+            _bot = bot ?? throw new ArgumentNullException(nameof(bot));
         }
 
         public async Task Run() {
             _applogger.LogInformation("Starting app...");
-            await RunBot(_appSettings);
+            await _bot.RunAsync(_appSettings);
         }
-
-        //create bot instance and run it
-        private async Task RunBot(AppSettings settings) => await new Bot(_botLogger).RunAsync(settings);
     }
 }
